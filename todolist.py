@@ -9,9 +9,6 @@ class TodoList(object):
         
     def __str__(self):
         return str((self.user, self.items))
-
-    def __repr__(self):
-        return "<TodoList user=%r>" % self.user
         
     def add_item(self, item):
         self.items.append(item)

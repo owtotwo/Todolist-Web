@@ -18,5 +18,8 @@ class Service(object):
     def add_todoitem(self, username, item):
         self._storage.add_todoitem(username, item)
 
-    def sync(self):
+    def save(self):
         self._storage.sync()
+
+    def load(self):
+        self._storage.read_from_file()

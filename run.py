@@ -8,19 +8,14 @@ from config import STATE_UNDO, STATE_DONE
 
 
 service = Service()
-service._storage.read_from_file()
 
-print service._storage.data
-service.add_user('Tiiiiiiiiim')
-service.sync()
-'''
+
 service.add_user('David')
-
+service.add_user('Tiiiiiiiiim')
 service.add_user('Jack')
 
 service.add_todoitem('David', TodoItem(1, 'David', datetime.now(), STATE_UNDO, "Hello I am David!"))
 service.add_todoitem('David', TodoItem(2, 'David', datetime.now(), STATE_UNDO, "Hello I am David!"))
 service.add_todoitem('Jack', TodoItem(3, 'Jack', datetime.now(), STATE_UNDO, "I am Jack, I hate you, David!"))
 
-
-'''
+service.save()

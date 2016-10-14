@@ -15,7 +15,6 @@ class Storage(object):
     def __init__(self, data_addr):
         self.data_addr = data_addr
         self.data = {}
-        self.read_from_file()
 
     def is_valid_user(self, username):
         return self._storage.is_valid_user(username)
