@@ -51,7 +51,10 @@ class Storage(object):
         self.data[username].add_item(item)
 
     def get_todolist(self, username):
-        raise NotImplementedError
+        try:
+            return self.data[username]
+        except KeyError:
+            raise
 
     def is_valid_user(self, username):
-        raise NotImplementedError
+        return username in self.data
