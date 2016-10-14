@@ -16,13 +16,9 @@ from random import randint
 
 app = Bottle()
 service = Service()
-<<<<<<< HEAD
 
-'''
-=======
 service.load()
 
->>>>>>> 0e1576ea98d50ea13b39fc57e5d8d85dffb143bc
 @app.route('/<username>')
 def UI(username):
     if not service.is_valid_user(username):
@@ -36,13 +32,8 @@ def index():
     u = User("sysuAT")
     items = [TodoItem(i, u, datetime.now(), STATE_UNDO,str(randint(0, 1234567))) for i in xrange(20)]
     tdl = TodoList(u, *items)
-<<<<<<< HEAD
-    return template("templates/index.html", todolist=tdl,config=config)
-
-=======
     return template("templates/index.html", todolist=tdl)
 '''
->>>>>>> 0e1576ea98d50ea13b39fc57e5d8d85dffb143bc
 
 @app.route('/static/<files:path>')
 def return_static_files(files):

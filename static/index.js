@@ -1,9 +1,9 @@
-document.write("haha")
+document.write("haha");
 
 function Done() {
-    location.reload(true)
+    location.reload(true);
 }
 
 function Undo() {
-    location.reload(true)
+    location.reload(true);
 }
