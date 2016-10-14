@@ -13,6 +13,6 @@ class TodoItem(object):
         return str(self)
 
     def __str__(self):
-        return str((self.id, self.owner, self.date.strftime(DATE_FORMAT),
-            self.state, self.content))
+        return str([self.id, self.owner, self.date.strftime(DATE_FORMAT),
+            self.state, self.content])
         

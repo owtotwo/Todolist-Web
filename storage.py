@@ -2,12 +2,14 @@ import codecs
 import json
 import os, sys
 from todolist import TodoList
+from config import DATE_FORMAT
 
 
 class TodoListEncoder(json.JSONEncoder):
     def default(self, o):
         if isinstance(o, TodoList):
-            return str(o)
+            return json.dumps([o.user, [[i.id, i.owner, i.date.strftime(DATE_FORMAT),
+                i.state, i.content] for i in o.items]])
         return json.JSONEncoder.default(self, o)
 
 class Storage(object):

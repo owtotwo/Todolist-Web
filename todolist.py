@@ -8,7 +8,7 @@ class TodoList(object):
         self.items = list(items)
         
     def __str__(self):
-        return str((self.user, self.items))
+        return str([self.user, self.items])
         
     def add_item(self, item):
         self.items.append(item)
