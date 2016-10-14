@@ -3,6 +3,7 @@
 
 """The Viewer in TodoList by bottle."""
 
+import config
 from config import ROOT_DIR, STATIC_DIR, STATE_UNDO, STATE_DONE
 from bottle import route, static_file, Bottle, template, error, redirect
 from user import User
@@ -14,13 +15,14 @@ from random import randint
 
 app = Bottle()
 service = Service()
-'''
+service.load()
+
 @app.route('/<username>')
 def UI(username):
     if not service.is_valid_user(username):
         return "Please Register!"
     tdl = service.get_todolist(username)
-    return template("templates/index.html", todolist=tdl)
+    return template("templates/index.html", todolist=tdl, config=config)
 '''
 @app.route('/')
 @app.route('/index.html')
@@ -29,7 +31,7 @@ def index():
     items = [TodoItem(i, u, datetime.now(), STATE_UNDO,str(randint(0, 1234567))) for i in xrange(20)]
     tdl = TodoList(u, *items)
     return template("templates/index.html", todolist=tdl)
-
+'''
 
 @app.route('/static/<files:path>')
 def return_static_files(files):

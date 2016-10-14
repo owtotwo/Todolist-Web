@@ -9,7 +9,6 @@ class TodoItem(object):
         self.state = state
         self.content = content
         
-
     def __repr__(self):
         return str(self)
 
