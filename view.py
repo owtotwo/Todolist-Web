@@ -11,15 +11,17 @@ from todolist import TodoList
 from service import Service
 from datetime import datetime
 from random import randint
-import json
 
 app = Bottle()
 service = Service()
-
+'''
 @app.route('/<username>')
 def UI(username):
-    raise NotImplementedError
-
+    if not service.is_valid_user(username):
+        return "Please Register!"
+    tdl = service.get_todolist(username)
+    return template("templates/index.html", todolist=tdl)
+'''
 @app.route('/')
 @app.route('/index.html')
 def index():
@@ -29,7 +31,7 @@ def index():
     return template("templates/index.html", todolist=tdl)
 
 
-@app.route('static/<files:path>')
+@app.route('/static/<files:path>')
 def return_static_files(files):
     return static_file('static/' + files, root=ROOT_DIR)
 

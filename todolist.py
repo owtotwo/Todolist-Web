@@ -3,13 +3,15 @@ from config import TODOLIST_FORMAT
 
 class TodoList(object):
     """The list of the todo items as well as the main struct in this object."""
-    def __init__(self, user, *items):
-        self.user = user
+    def __init__(self, username, *items):
+        self.user = username
         self.items = list(items)
         
     def __str__(self):
-        return str(self.items)
+        return str((self.user, self.items))
 
     def __repr__(self):
         return "<TodoList user=%r>" % self.user
         
+    def add_item(self, item):
+        self.items.append(item)
