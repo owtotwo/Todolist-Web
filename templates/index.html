@@ -14,7 +14,7 @@
             <span id=owner>{{item.owner}}</span>
             <span id=date>{{item.date}}</span>
             <span id=content>{{item.content}}</span>
-            <input type="Checkbox" onclick="Done()">{{item.state}}</input>
+            <input type="Checkbox" onclick="Done({{item.owner}}, {{item.id}})">{{item.state}}</input>
       </li>
        % end
 
@@ -24,7 +24,7 @@
             <span id=owner>{{item.owner}}</span>
             <span id=date>{{item.date}}</span>
             <span id=content>{{item.content}}</span>
-            <input type="Checkbox" onclick="Undo()">{{item.state}}</input>
+            <input type="Checkbox" onclick="Undo({{item.owner}}, {{item.id}})">{{item.state}}</input>
       </li>
       % end
   </body>    

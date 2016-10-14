@@ -1,9 +1,13 @@
-document.write("haha");
 
-function Done() {
+
+function Done(user, id) {
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", "sysu.top/"+ user+ "/" + id, false);
     location.reload(true);
 }
 
-function Undo() {
+function Undo(user, id) {
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", "sysu.top/"+ user+ "/" + id, false);
     location.reload(true);
 }
