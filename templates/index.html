@@ -3,12 +3,26 @@
   <head>
     <meta http-equiv="text/html" charset="utf-8" />
     <title> TodoList </title>
+    <link href="../static/index.css" type="text/css" rel="stylesheet">
+    <scrip src="../static/index.js" type="text/javascript"></scrip>
   </head>
   <body>
     <p> Hello, {{todolist.user}} </p>
     <ul>
       %for item in todolist.items:
-      <li> {{item}} </li>
+        %if item.id % 2 == 0:
+      <li>  <span id=id>{{item.id}}</span>
+            <span id=owner>{{item.owner}}</span>
+            <span id=date>{{item.date}}</span>
+            <span id=content>{{item.content}}</span>
+            <input type="radio">orz</input>
+             </li>
+        %else:
+      <li>  <span id=id>{{item.id}}</span>
+            <span id=owner>{{item.owner}}</span>
+            <span id=date>{{item.date}}</span>
+            <span id=comtent>{{item.content}}</span>
+            <input type="radio">zro</input></li>
       %end
     </ul>
   </body>    

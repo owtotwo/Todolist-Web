@@ -12,7 +12,7 @@ from random import randint
 
 app = Bottle()
 
-@app.route('/')
+@app.route('/') 
 @app.route('/index.html')
 def index():
     u = User("sysuAT")

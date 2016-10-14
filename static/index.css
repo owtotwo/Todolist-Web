@@ -1,0 +1,10 @@
+/*主题样式采用示例样式，嗯然后微妙的调整了布局*/
+/*通用匹配*/
+* {
+    margin: 0px;
+    border: 0px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: gray;
+}
