@@ -22,9 +22,9 @@ body {
 }
 
 li {
-    margin: 5px;
+    margin: 10px;
     list-style: none;
-    border-radius: 25px;
+    border-radius: 15px;
     background: whitesmoke;
 }
 
@@ -33,7 +33,7 @@ li {
 }
 
 #owner{
-    
+   
 }
 
 #date {
@@ -41,7 +41,7 @@ li {
 }
 
 #content {
-   
+    background: bisque;
 }
 
 input {

@@ -9,21 +9,22 @@
   <body>
     <p id=hello> Hello, {{todolist.user}} </p>
       % for item in todolist.items:
-          % if item.id % 2 == 0:
+          % if item.state == config.STATE_DONE:
       <li>  <span id=id>{{item.id}}</span>
             <span id=owner>{{item.owner}}</span>
             <span id=date>{{item.date}}</span>
             <span id=content>{{item.content}}</span>
-            <input type="radio" onclick="">finished</input>
+            <input type="Checkbox" onclick="Done()">{{item.state}}</input>
       </li>
+       % end
 
        % for item in todolist.items:
-          % if item.id % 2 != 0:
+          % if item.state == config.STATE_UNDO:
       <li>  <span id=id>{{item.id}}</span>
             <span id=owner>{{item.owner}}</span>
             <span id=date>{{item.date}}</span>
-            <span id=comtent>{{item.content}}</span>
-            <input type="radio" onclick="">unfinished</input>
+            <span id=content>{{item.content}}</span>
+            <input type="Checkbox" onclick="Undo()">{{item.state}}</input>
       </li>
       % end
   </body>    

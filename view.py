@@ -4,6 +4,7 @@
 """The Viewer in TodoList by bottle."""
 
 from config import ROOT_DIR, STATIC_DIR, STATE_UNDO, STATE_DONE
+import config
 from bottle import route, static_file, Bottle, template, error, redirect
 from user import User
 from todoitem import TodoItem
@@ -29,7 +30,7 @@ def index():
     u = User("sysuAT")
     items = [TodoItem(i, u, datetime.now(), STATE_UNDO,str(randint(0, 1234567))) for i in xrange(20)]
     tdl = TodoList(u, *items)
-    return template("templates/index.html", todolist=tdl)
+    return template("templates/index.html", todolist=tdl,config=config)
 
 
 @app.route('/static/<files:path>')
