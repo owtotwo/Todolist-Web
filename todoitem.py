@@ -11,14 +11,9 @@ class TodoItem(object):
         
 
     def __repr__(self):
-        return "<TodoItem id=%d>" % self.id
+        return str(self)
 
     def __str__(self):
-        return TODOITEM_FORMAT.format(
-            id=self.id, 
-            owner=self.owner, 
-            date=self.date.strftime(DATE_FORMAT),
-            state=self.state,
-            content=self.content
-        )
+        return str((self.id, self.owner, self.date.strftime(DATE_FORMAT),
+            self.state, self.content))
         

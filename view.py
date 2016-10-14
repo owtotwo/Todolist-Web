@@ -11,14 +11,19 @@ from todolist import TodoList
 from service import Service
 from datetime import datetime
 from random import randint
-import json
 
 app = Bottle()
 service = Service()
 
-
-
-@app.route('/') 
+'''
+@app.route('/<username>')
+def UI(username):
+    if not service.is_valid_user(username):
+        return "Please Register!"
+    tdl = service.get_todolist(username)
+    return template("templates/index.html", todolist=tdl)
+'''
+@app.route('/')
 @app.route('/index.html')
 def index():
     u = User("sysuAT")
@@ -26,11 +31,7 @@ def index():
     tdl = TodoList(u, *items)
     return template("templates/index.html", todolist=tdl)
 
-'''
-@app.route('/<username>')
-def UI(username):
-    raise NotImplementedError
-'''
+
 @app.route('/static/<files:path>')
 def return_static_files(files):
     print files
@@ -42,8 +43,6 @@ def echo(username, id):
     if not is_valid_user(username):
         return None
     raise NotImplementedError
-
-
 
 @error(404)
 def error404(error):
