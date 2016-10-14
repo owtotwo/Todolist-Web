@@ -6,3 +6,4 @@ DATE_FORMAT = "%Y-%m-%d/%H:%M"
 TODOLIST_FORMAT = ""
 STATE_UNDO = "Undo"
 STATE_DONE = "Done"
+DATA_FILE = os.path.join(ROOT_DIR, "data.json")
