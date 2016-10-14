@@ -16,9 +16,7 @@ import json
 app = Bottle()
 service = Service()
 
-@app.route('/<username>')
-def UI(username):
-    raise NotImplementedError
+
 
 @app.route('/') 
 @app.route('/index.html')
@@ -28,9 +26,14 @@ def index():
     tdl = TodoList(u, *items)
     return template("templates/index.html", todolist=tdl)
 
-
-@app.route('static/<files:path>')
+'''
+@app.route('/<username>')
+def UI(username):
+    raise NotImplementedError
+'''
+@app.route('/static/<files:path>')
 def return_static_files(files):
+    print files
     return static_file('static/' + files, root=ROOT_DIR)
 
 
@@ -46,4 +49,4 @@ def echo(username, id):
 def error404(error):
     return 'Nothing here, sorry'
 
-app.run(debug=True, reload=True)
+app.run(debug=True, reload=True, port=8888)
