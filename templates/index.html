@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="text/html" charset="utf-8" />
+    <title> TodoList </title>
+  </head>
+  <body>
+    <p> Hello, {{todolist.user}} </p>
+    <ul>
+      %for item in todolist.items:
+      <li> {{item}} </li>
+      %end
+    </ul>
+  </body>    
+</html>
