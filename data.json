@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-{"Tiiiiiiiiim": "[\"Tiiiiiiiiim\", []]", "Jack": "[\"Jack\", [[3, \"Jack\", \"2016-10-14/23:07\", \"Undo\", \"I am Jack, I hate you, David!\"]]]", "David": "[\"David\", [[1, \"David\", \"2016-10-14/23:07\", \"Undo\", \"Hello I am David!\"], [2, \"David\", \"2016-10-14/23:07\", \"Undo\", \"Hello I am David!\"]]]"}
-=======
-{"Tiiiiiiiiim": ["Tiiiiiiiiim", []], "Jack": ["Jack", [[3, "Jack", "2016-10-14/23:14", "Undo", "I am Jack, I hate you, David!"]]], "David": ["David", [[1, "David", "2016-10-14/23:14", "Undo", "Hello I am David!"], [2, "David", "2016-10-14/23:14", "Undo", "Hello I am David!"]]]}
->>>>>>> 53631c5584e264150cc8dc2063027f737ed87fa7
+{"Tiiiiiiiiim": ["Tiiiiiiiiim", []], "Jack": ["Jack", [[3, "Jack", "2016-10-14/23:15", "Undo", "I am Jack, I hate you, David!"]]], "David": ["David", [[1, "David", "2016-10-14/23:15", "Undo", "Hello I am David!"], [2, "David", "2016-10-14/23:15", "Undo", "Hello I am David!"]]]}
