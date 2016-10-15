@@ -25,4 +25,7 @@ class Service(object):
         self._storage.read_from_file()
 
     def do_item(self, username, item_id):
-        self._storage.do_item(username, item_id) 
+        self._storage.do_item(username, item_id)
+
+    def undo_item(self, username, item_id):
+        self._storage.undo_item(username, item_id) 

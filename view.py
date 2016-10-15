@@ -42,11 +42,21 @@ def return_static_files(files):
     return static_file('static/' + files, root=ROOT_DIR)
 
 
-@app.route('/<username>/do/<id>')
+@app.route('/<username>/do/<id:int>')
 def echo(username, id):
     if not service.is_valid_user(username):
         return None
-    service.do_item(username, item_id)
+    service.do_item(username, id)
+    return redirect('/' + username)
+
+
+@app.route('/<username>/undo/<id:int>')
+def echo(username, id):
+    if not service.is_valid_user(username):
+        return None
+    service.undo_item(username, id)
+    return redirect('/' + username)
+
 
 @error(404)
 def error404(error):

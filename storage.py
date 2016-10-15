@@ -80,4 +80,14 @@ class Storage(object):
                 item.state = STATE_DONE
                 return True
         else:
+            print "ID Not Found"
+            return False
+
+    def undo_item(self, username, item_id):
+        for item in self.data[username].items:
+            if item.id == item_id:
+                item.state = STATE_UNDO
+                return True
+        else:
+            print "ID Not Found"
             return False
