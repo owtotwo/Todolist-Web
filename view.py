@@ -23,9 +23,7 @@ service.load()
 def UI(username):
     if not service.is_valid_user(username):
         return "Please Register!"
-    tdl = TodoList(username)
-    tdl.user = service._storage.data[username][0]
-    tdl.items = service._storage.data[username][1]
+    tdl = service.get_todolist(username)
     print tdl
     return template("templates/index.html", todolist=tdl, config=config)
 '''

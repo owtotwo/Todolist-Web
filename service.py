@@ -10,7 +10,7 @@ class Service(object):
         return self._storage.is_valid_user(username)
 
     def get_todolist(self, username):
-        self._storage.get_todolist(username)
+        return self._storage.get_todolist(username)
 
     def add_user(self, username):
         self._storage.add_user(username)
