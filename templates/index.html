@@ -4,7 +4,7 @@
     <meta http-equiv="text/html" charset="utf-8" />
     <title> TodoList </title>
     <link href="../static/index.css" type="text/css" rel="stylesheet">
-    <scrip src="../static/index.js" type="text/javascript"></scrip>
+    <script src="../static/index.js" type="text/javascript"></script>
   </head>
   <body>
     <p id=hello> Hello, {{todolist.user}} </p>
@@ -14,8 +14,9 @@
             <span id=owner>{{item.owner}}</span>
             <span id=date>{{item.date}}</span>
             <span id=content>{{item.content}}</span>
-            <input type="Checkbox" onclick="Done({{item.owner}}, {{item.id}})">{{item.state}}</input>
+            <input type="Checkbox" onclick="Undo('{{item.owner}}', {{item.id}})">{{item.state}}</input>
       </li>
+          %end
        % end
 
        % for item in todolist.items:
@@ -24,8 +25,9 @@
             <span id=owner>{{item.owner}}</span>
             <span id=date>{{item.date}}</span>
             <span id=content>{{item.content}}</span>
-            <input type="Checkbox" onclick="Undo({{item.owner}}, {{item.id}})">{{item.state}}</input>
+            <input type="Checkbox" onclick="Done('{{item.owner}}', {{item.id}})">{{item.state}}</input>
       </li>
+          %end
       % end
   </body>    
 </html>
