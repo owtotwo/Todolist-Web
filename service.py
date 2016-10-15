@@ -23,3 +23,6 @@ class Service(object):
 
     def load(self):
         self._storage.read_from_file()
+
+    def do_item(self, username, item_id):
+        self._storage.do_item(username, item_id) 

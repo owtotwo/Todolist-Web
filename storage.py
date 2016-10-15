@@ -3,7 +3,7 @@ import json
 import os, sys
 from todolist import TodoList
 from todoitem import TodoItem
-from config import DATE_FORMAT
+from config import DATE_FORMAT, STATE_DONE, STATE_UNDO
 from datetime import datetime
 
 
@@ -73,3 +73,11 @@ class Storage(object):
 
     def is_valid_user(self, username):
         return username in self.data
+
+    def do_item(self, username, item_id):
+        for item in self.data[username].items:
+            if item.id == item_id:
+                item.state = STATE_DONE
+                return True
+        else:
+            return False

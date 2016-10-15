@@ -44,9 +44,9 @@ def return_static_files(files):
 
 @app.route('/<username>/do/<id>')
 def echo(username, id):
-    if not is_valid_user(username):
+    if not service.is_valid_user(username):
         return None
-    raise NotImplementedError
+    service.do_item(username, item_id)
 
 @error(404)
 def error404(error):
