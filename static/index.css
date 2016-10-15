@@ -1,0 +1,48 @@
+/*通用匹配*/
+* {
+    margin: 0px;
+    border: 0px;
+    overflow: hidden;
+}
+/*主体字体样式*/
+body {
+    font-size: 22px;
+    font-family: Verdana, Tahoma, sans-serif;
+    background: #E0E0E0;
+}
+
+#hello {
+    
+    position: relative;
+    width: 560px;
+    height: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+li {
+    margin: 10px;
+    list-style: none;
+    border-radius: 15px;
+    background: whitesmoke;
+}
+
+#id {
+    margin: 20px
+}
+
+#owner{
+   
+}
+
+#date {
+   
+}
+
+#content {
+    background: bisque;
+}
+
+input {
+    
+}

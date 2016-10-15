@@ -5,6 +5,7 @@
 
 import config
 from config import ROOT_DIR, STATIC_DIR, STATE_UNDO, STATE_DONE
+import config
 from bottle import route, static_file, Bottle, template, error, redirect
 from user import User
 from todoitem import TodoItem
@@ -15,13 +16,17 @@ from random import randint
 
 app = Bottle()
 service = Service()
+
 service.load()
 
 @app.route('/<username>')
 def UI(username):
     if not service.is_valid_user(username):
         return "Please Register!"
-    tdl = service.get_todolist(username)
+    tdl = TodoList(username)
+    tdl.user = service._storage.data[username][0]
+    tdl.items = service._storage.data[username][1]
+    print tdl
     return template("templates/index.html", todolist=tdl, config=config)
 '''
 @app.route('/')
@@ -35,6 +40,7 @@ def index():
 
 @app.route('/static/<files:path>')
 def return_static_files(files):
+    print files
     return static_file('static/' + files, root=ROOT_DIR)
 
 
@@ -44,10 +50,8 @@ def echo(username, id):
         return None
     raise NotImplementedError
 
-
-
 @error(404)
 def error404(error):
     return 'Nothing here, sorry'
 
-app.run(debug=True, reload=True)
+app.run(debug=True, reload=True, port=8888)
